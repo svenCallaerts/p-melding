@@ -43,6 +43,15 @@ $ledig=$antallDeltagere-mysqli_fetch_object($paaMeldte)->antall;
 </td>
 <td><span id="antall_<?php echo $id; ?>" class="text"><?php echo $antallDeltagere; ?></span></td>
 <td><span id="deltagerListe_<?php echo $id; ?>" class="text"><a href="javascript:void(0)" onClick="javascript:visDeltagere(<?php echo $id ?>);"><?php echo $ledig; ?></a></span></td>
+<td>
+<?php
+if ($ledig > 0){
+	?>
+	<input type="submit" value="meld på" onclick="javascript:meldPaa(<?php echo $id ?>)" />
+	<?php
+}else echo "Fult";
+?>
+</td>
 </tr>
 <?php
 }
